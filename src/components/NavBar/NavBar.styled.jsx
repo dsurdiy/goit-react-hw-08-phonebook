@@ -13,7 +13,7 @@ export const Logo = styled(Link)`
   display: flex;
   padding: 15px;
   align-items: center;
-  color: #0d6efd;
+  color: #2e2e2e;
   text-decoration: none;
   font-size: 25px;
   font-weight: 700;
@@ -21,7 +21,7 @@ export const Logo = styled(Link)`
 
   &:hover,
   :focus {
-    color: #2e2e2e;
+    color: #0d6efd;
   }
 
   svg {

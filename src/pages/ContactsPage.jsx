@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { FallingLines } from 'react-loader-spinner';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import { ContactForm } from 'components/ContactForm/ContactForm';
@@ -68,7 +68,6 @@ export const ContactsPage = () => {
         <ContactList contacts={getFilteredContacts()} />
       )}
       {!isContacts && <b>There are no contacts...</b>}
-      <ToastContainer position="top-center" />
     </>
   );
 };

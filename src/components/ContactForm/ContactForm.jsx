@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { nanoid } from 'nanoid';
 import PropTypes from 'prop-types';
 import { IoMdContact } from 'react-icons/io';
 import { BsFillPhoneFill } from 'react-icons/bs';
@@ -22,7 +21,7 @@ export const ContactForm = ({ onSubmit }) => {
   const handleSubmit = e => {
     e.preventDefault();
 
-    const newContact = { id: nanoid(), name, phone: number };
+    const newContact = { name, number };
     onSubmit(newContact);
 
     setName('');

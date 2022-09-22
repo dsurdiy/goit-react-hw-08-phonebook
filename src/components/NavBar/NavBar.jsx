@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import { TiContacts } from 'react-icons/ti';
 import { NavHeader, Logo } from './NavBar.styled';
 import { AuthMenu } from 'components/AuthMenu/AuthMenu';
@@ -14,7 +15,14 @@ export const NavBar = () => {
         Phonebook <TiContacts size={30} />
       </Logo>
 
-      {isLogin ? <UserMenu /> : <AuthMenu />}
+      {isLogin ? (
+        <>
+          <NavLink to="/contacts">Contacts</NavLink>
+          <UserMenu />
+        </>
+      ) : (
+        <AuthMenu />
+      )}
     </NavHeader>
   );
 };

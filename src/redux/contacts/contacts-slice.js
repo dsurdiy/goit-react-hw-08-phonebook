@@ -17,13 +17,14 @@ const contactsSlice = createSlice({
     [contactsOperations.addContact.fulfilled]: (state, action) => {
       state.items.push(action.payload);
     },
-    [contactsOperations.deleteContact.pending]: state => {
-      state.loading = true;
-      state.error = null;
-    },
     [contactsOperations.deleteContact.fulfilled]: (state, action) => {
       state.loading = false;
       state.items = state.items.filter(item => item.id !== action.payload);
+    },
+    [contactsOperations.updateContact.fulfilled]: (state, { payload }) => {
+      state.items = state.items.map(item =>
+        item.id === payload.id ? payload : item
+      );
     },
   },
 });

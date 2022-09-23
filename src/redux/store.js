@@ -13,7 +13,6 @@ import storage from 'redux-persist/lib/storage';
 
 import authReducer from './auth/auth-slice';
 import contactsReducer from './contacts/contacts-slice';
-// import { contactsApi } from './contactsSlice';
 import filterReducer from './filterSlice';
 
 const authPersistConfig = {
@@ -34,7 +33,6 @@ export const store = configureStore({
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
     }),
-    // contactsApi.middleware,
   ],
 });
 

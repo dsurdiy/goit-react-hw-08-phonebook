@@ -1,10 +1,18 @@
 import styled from 'styled-components';
 
-export const ContactInfo = styled.div`
+export const ContactWrapper = styled.div`
+  display: flex;
+`;
+
+export const ContactInfo = styled.a`
   display: flex;
   width: 100%;
   justify-content: space-between;
+  padding: 10px;
   margin-right: 40px;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
 
   span {
     display: flex;

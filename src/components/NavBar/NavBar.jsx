@@ -1,13 +1,12 @@
-import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { TiContacts } from 'react-icons/ti';
 import { NavHeader, Logo } from './NavBar.styled';
 import { AuthMenu } from 'components/AuthMenu/AuthMenu';
 import { UserMenu } from 'components/UserMenu/UserMenu';
-import authSelectors from 'redux/auth/auth-selectors';
+import useAuth from 'hooks/useAuth';
 
 export const NavBar = () => {
-  const isLogin = useSelector(authSelectors.getIsLogin);
+  const isLogin = useAuth();
 
   return (
     <NavHeader>

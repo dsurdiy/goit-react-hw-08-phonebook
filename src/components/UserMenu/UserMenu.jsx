@@ -6,10 +6,12 @@ export const UserMenu = () => {
   const dispatch = useDispatch();
   const email = useSelector(authSelectors.getEmail);
 
+  const onLogout = () => dispatch(authOperations.logout());
+
   return (
     <div>
       <span>{email}</span>
-      <button type="button" onClick={() => dispatch(authOperations.logout())}>
+      <button type="button" onClick={onLogout}>
         Logout
       </button>
     </div>

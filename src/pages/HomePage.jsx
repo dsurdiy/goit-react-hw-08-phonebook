@@ -1,6 +1,6 @@
 import { MdOutlineContacts } from 'react-icons/md';
 
-export const HomePage = () => {
+const HomePage = () => {
   return (
     <main
       style={{
@@ -22,3 +22,5 @@ export const HomePage = () => {
     </main>
   );
 };
+
+export default HomePage;

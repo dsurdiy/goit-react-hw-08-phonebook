@@ -1,6 +1,6 @@
-import { NavLink } from 'react-router-dom';
 import { TiContacts } from 'react-icons/ti';
-import { NavHeader, Logo } from './NavBar.styled';
+import { MdContacts } from 'react-icons/md';
+import { NavHeader, Logo, ContactsLink } from './NavBar.styled';
 import { AuthMenu } from 'components/AuthMenu/AuthMenu';
 import { UserMenu } from 'components/UserMenu/UserMenu';
 import useAuth from 'hooks/useAuth';
@@ -16,7 +16,9 @@ export const NavBar = () => {
 
       {isLogin ? (
         <>
-          <NavLink to="/contacts">Contacts</NavLink>
+          <ContactsLink to="/contacts">
+            <MdContacts size={25} />
+          </ContactsLink>
           <UserMenu />
         </>
       ) : (

@@ -1,4 +1,4 @@
-@import-normalize; /* bring in normalize.css styles */
+@import-normalize;
 
 * {
   box-sizing: border-box;
@@ -11,6 +11,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: #2e2e2e;
+  background-image: url(./images/bg.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 h1,
@@ -27,4 +31,8 @@ ul {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+a {
+  text-decoration: none;
 }

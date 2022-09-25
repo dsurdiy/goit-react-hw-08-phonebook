@@ -7,7 +7,6 @@ import { BiPhone } from 'react-icons/bi';
 import { Modal } from 'components/Modal/Modal';
 import { ContactEditor } from 'components/ContactEditor/ContactEditor';
 import { ContactWrapper, ContactInfo, DeleteBtn } from './Contact.styled';
-// import { Spinner } from 'components/Spinner/Spinner';
 import contactsOperations from 'redux/contacts/contacts-operations';
 import contactsSelectors from 'redux/contacts/contacts-selectors';
 
@@ -30,7 +29,7 @@ export const Contact = ({ id, name, number }) => {
     setIsShowModal(true);
   };
 
-  const handleCloseEditor = () => setIsShowModal(false);
+  const handleCloseModal = () => setIsShowModal(false);
 
   return (
     <>
@@ -51,18 +50,17 @@ export const Contact = ({ id, name, number }) => {
           disabled={isLoading}
           onClick={() => handleDeleteContact(id)}
         >
-          {/* {isLoading ? <Spinner /> : 'Delete'} */}
           Delete
         </DeleteBtn>
       </ContactWrapper>
 
       {isShowModal && (
-        <Modal>
+        <Modal onClose={handleCloseModal}>
           <ContactEditor
             id={id}
             name={name}
             number={number}
-            onClose={handleCloseEditor}
+            onClose={handleCloseModal}
           />
         </Modal>
       )}

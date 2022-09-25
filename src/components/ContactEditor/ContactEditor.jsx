@@ -55,3 +55,11 @@ export const ContactEditor = ({ id, name, number, onClose }) => {
     </div>
   );
 };
+
+// Прописати пропи
+
+// Contact.propTypes = {
+//   id: PropTypes.string.isRequired,
+//   name: PropTypes.string.isRequired,
+//   number: PropTypes.string.isRequired,
+// };

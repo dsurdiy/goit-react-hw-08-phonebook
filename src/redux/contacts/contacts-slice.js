@@ -18,7 +18,6 @@ const contactsSlice = createSlice({
       state.items.push(action.payload);
     },
     [contactsOperations.deleteContact.fulfilled]: (state, action) => {
-      state.loading = false;
       state.items = state.items.filter(item => item.id !== action.payload);
     },
     [contactsOperations.updateContact.fulfilled]: (state, { payload }) => {

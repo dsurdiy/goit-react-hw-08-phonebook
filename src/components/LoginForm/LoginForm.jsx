@@ -1,5 +1,5 @@
 import { BiLogIn } from 'react-icons/bi';
-import { FormWrapper, IconWrapper, IconText } from './LoginForm.styled';
+import { Form, Label, Input, IconWrapper, SubmitBtn } from './LoginForm.styled';
 
 export const LoginForm = ({ onSubmit }) => {
   const handleSubmit = e => {
@@ -12,24 +12,22 @@ export const LoginForm = ({ onSubmit }) => {
   };
 
   return (
-    <FormWrapper>
-      <form onSubmit={handleSubmit}>
-        <IconWrapper>
-          <BiLogIn size={35} />
-          <IconText>Log in</IconText>
-        </IconWrapper>
+    <Form onSubmit={handleSubmit}>
+      <IconWrapper>
+        <BiLogIn size={35} />
+        <span>Log in</span>
+      </IconWrapper>
 
-        <label>
-          Email address
-          <input type="email" name="email" placeholder="Enter email" />
-        </label>
-        <label>
-          Password
-          <input type="password" name="password" placeholder="Password" />
-        </label>
+      <Label>
+        Email address
+        <Input type="email" name="email" placeholder="Enter email" />
+      </Label>
+      <Label>
+        Password
+        <Input type="password" name="password" placeholder="Password" />
+      </Label>
 
-        <button type="submit">Log in</button>
-      </form>
-    </FormWrapper>
+      <SubmitBtn type="submit">Log in</SubmitBtn>
+    </Form>
   );
 };

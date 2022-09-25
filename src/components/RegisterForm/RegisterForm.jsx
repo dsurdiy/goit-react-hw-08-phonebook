@@ -1,5 +1,11 @@
 import { FaUserLock } from 'react-icons/fa';
-import { FormWrapper, IconWrapper, IconText } from './RegisterForm.styled';
+import {
+  Form,
+  IconWrapper,
+  Label,
+  Input,
+  SubmitBtn,
+} from './RegisterForm.styled';
 
 export const RegisterForm = ({ onSubmit }) => {
   const hadnleSubmit = e => {
@@ -13,26 +19,31 @@ export const RegisterForm = ({ onSubmit }) => {
   };
 
   return (
-    <FormWrapper>
-      <form onSubmit={hadnleSubmit}>
-        <IconWrapper>
-          <FaUserLock size={35} />
-          <IconText>Sign up</IconText>
-        </IconWrapper>
+    <Form onSubmit={hadnleSubmit}>
+      <IconWrapper>
+        <FaUserLock size={35} />
+        <span>Sign up</span>
+      </IconWrapper>
 
-        <label>
-          Name
-          <input type="text" name="name" placeholder="Enter name" />
-        </label>
-        <label>
-          Email address
-          <input type="email" name="email" placeholder="Enter email" />
-        </label>
-        <label>Password</label>
-        <input type="password" name="password" placeholder="Password" />
+      <Label>
+        Name
+        <Input type="text" name="name" required placeholder="Enter name" />
+      </Label>
+      <Label>
+        Email address
+        <Input type="email" name="email" required placeholder="Enter email" />
+      </Label>
+      <Label>
+        Password
+        <Input
+          type="password"
+          name="password"
+          required
+          placeholder="Password"
+        />
+      </Label>
 
-        <button type="submit">Sign up</button>
-      </form>
-    </FormWrapper>
+      <SubmitBtn type="submit">Sign up</SubmitBtn>
+    </Form>
   );
 };

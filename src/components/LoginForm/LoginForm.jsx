@@ -20,11 +20,16 @@ export const LoginForm = ({ onSubmit }) => {
 
       <Label>
         Email address
-        <Input type="email" name="email" placeholder="Enter email" />
+        <Input type="email" name="email" required placeholder="Enter email" />
       </Label>
       <Label>
         Password
-        <Input type="password" name="password" placeholder="Password" />
+        <Input
+          type="password"
+          name="password"
+          required
+          placeholder="Password"
+        />
       </Label>
 
       <SubmitBtn type="submit">Log in</SubmitBtn>

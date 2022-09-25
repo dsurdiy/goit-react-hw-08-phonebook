@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { RegisterForm } from 'components/RegisterForm/RegisterForm';
 import authOperations from 'redux/auth/auth-operations';
 import authSelectors from 'redux/auth/auth-selectors';

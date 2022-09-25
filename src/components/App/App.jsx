@@ -2,7 +2,8 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
 import { UserRoutes } from 'UserRoutes';
-import { Layout } from 'components/Layout/Layout';
+import { NavBar } from 'components/NavBar/NavBar';
+import { Container } from './App.styled';
 
 import authOperations from 'redux/auth/auth-operations';
 import authSelectors from 'redux/auth/auth-selectors';
@@ -19,12 +20,12 @@ export const App = () => {
 
   return (
     !isGettingCurrentUser && (
-      <>
-        <Layout />
+      <Container>
+        <NavBar />
         <UserRoutes />
 
         <ToastContainer position="top-right" />
-      </>
+      </Container>
     )
   );
 };

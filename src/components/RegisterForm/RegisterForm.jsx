@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { FaUserLock } from 'react-icons/fa';
 import {
   Form,
@@ -46,4 +47,8 @@ export const RegisterForm = ({ onSubmit }) => {
       <SubmitBtn type="submit">Sign up</SubmitBtn>
     </Form>
   );
+};
+
+RegisterForm.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
 };

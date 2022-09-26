@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { BiLogIn } from 'react-icons/bi';
 import { Form, Label, Input, IconWrapper, SubmitBtn } from './LoginForm.styled';
 
@@ -35,4 +36,8 @@ export const LoginForm = ({ onSubmit }) => {
       <SubmitBtn type="submit">Log in</SubmitBtn>
     </Form>
   );
+};
+
+LoginForm.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
 };

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { MdClose } from 'react-icons/md';
 import {
@@ -63,10 +64,9 @@ export const ContactEditor = ({ id, name, number, onClose }) => {
   );
 };
 
-// Прописати пропи
-
-// Contact.propTypes = {
-//   id: PropTypes.string.isRequired,
-//   name: PropTypes.string.isRequired,
-//   number: PropTypes.string.isRequired,
-// };
+ContactEditor.propTypes = {
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  number: PropTypes.string.isRequired,
+  onClose: PropTypes.func.isRequired,
+};

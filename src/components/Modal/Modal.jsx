@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { Overlay, Content } from './Modal.styled';
@@ -32,4 +33,8 @@ export const Modal = ({ children, onClose }) => {
     </Overlay>,
     modalRoot
   );
+};
+
+Modal.propTypes = {
+  onClose: PropTypes.func.isRequired,
 };

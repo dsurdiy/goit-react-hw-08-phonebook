@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const ContactWrapper = styled.div`
   display: flex;
+  gap: 10px;
 `;
 
 export const ContactInfo = styled.a`
@@ -9,10 +10,16 @@ export const ContactInfo = styled.a`
   width: 100%;
   justify-content: space-between;
   padding: 10px;
-  margin-right: 40px;
   color: inherit;
-  text-decoration: none;
+  background-color: #fff;
+  border-radius: 10px;
   cursor: pointer;
+  transform: scale(1);
+  transition: transform 300ms linear;
+
+  &:hover {
+    transform: scale(1.02);
+  }
 
   span {
     display: flex;
@@ -25,11 +32,9 @@ export const ContactInfo = styled.a`
 `;
 
 export const DeleteBtn = styled.button`
-  display: block;
-  margin: 0 auto;
   border-radius: 10px;
   border: none;
-  background-color: #d37b7b;
+  background-color: #e55d5d;
   cursor: pointer;
   transition: all 250ms linear;
 

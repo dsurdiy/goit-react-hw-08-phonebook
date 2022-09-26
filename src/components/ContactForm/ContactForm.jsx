@@ -2,7 +2,7 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { IoMdContact } from 'react-icons/io';
 import { BsFillPhoneFill } from 'react-icons/bs';
-import { Form, FormInput, AddContactBtn } from './ContactForm.styled';
+import { Form, Label, Input, AddContactBtn } from './ContactForm.styled';
 
 export const ContactForm = ({ onSubmit }) => {
   const [name, setName] = useState('');
@@ -30,9 +30,9 @@ export const ContactForm = ({ onSubmit }) => {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <label>
-        <IoMdContact size={20} fill="tomato" /> Name
-        <FormInput
+      <Label>
+        <IoMdContact size={20} /> Name
+        <Input
           type="text"
           name="name"
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -41,10 +41,10 @@ export const ContactForm = ({ onSubmit }) => {
           value={name}
           onChange={handleNameChange}
         />
-      </label>
-      <label>
-        <BsFillPhoneFill size={18} fill="tomato" /> Number
-        <FormInput
+      </Label>
+      <Label>
+        <BsFillPhoneFill size={18} /> Number
+        <Input
           type="tel"
           name="number"
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
@@ -53,7 +53,7 @@ export const ContactForm = ({ onSubmit }) => {
           value={number}
           onChange={handleNumberChange}
         />
-      </label>
+      </Label>
       <AddContactBtn type="submit">Add contact</AddContactBtn>
     </Form>
   );

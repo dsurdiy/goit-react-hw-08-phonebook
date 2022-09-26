@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { toast } from 'react-toastify';
 import { GrContactInfo } from 'react-icons/gr';
 import { BiPhone } from 'react-icons/bi';
+import { AiOutlineDelete } from 'react-icons/ai';
 import { Modal } from 'components/Modal/Modal';
 import { ContactEditor } from 'components/ContactEditor/ContactEditor';
 import { ContactWrapper, ContactInfo, DeleteBtn } from './Contact.styled';
@@ -50,7 +51,7 @@ export const Contact = ({ id, name, number }) => {
           disabled={isLoading}
           onClick={() => handleDeleteContact(id)}
         >
-          Delete
+          <AiOutlineDelete size={20} />
         </DeleteBtn>
       </ContactWrapper>
 

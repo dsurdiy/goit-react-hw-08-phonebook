@@ -1,5 +1,12 @@
 import { useDispatch } from 'react-redux';
 import { MdClose } from 'react-icons/md';
+import {
+  EditorHeading,
+  CloseBtn,
+  Label,
+  Input,
+  UpdateContactBtn,
+} from './ContactEditor.styled';
 import contactsOperations from 'redux/contacts/contacts-operations';
 
 export const ContactEditor = ({ id, name, number, onClose }) => {
@@ -20,17 +27,17 @@ export const ContactEditor = ({ id, name, number, onClose }) => {
   };
 
   return (
-    <div>
-      <p>
+    <>
+      <EditorHeading>
         <span>Update contact</span>
-        <button type="button" onClick={() => onClose()}>
-          <MdClose />
-        </button>
-      </p>
+        <CloseBtn type="button" onClick={() => onClose()}>
+          <MdClose size={30} />
+        </CloseBtn>
+      </EditorHeading>
       <form onSubmit={handleFormSubmit}>
-        <label>
+        <Label>
           Name
-          <input
+          <Input
             type="text"
             name="name"
             pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -38,10 +45,10 @@ export const ContactEditor = ({ id, name, number, onClose }) => {
             required
             placeholder={name}
           />
-        </label>
-        <label>
+        </Label>
+        <Label>
           Nubmer
-          <input
+          <Input
             type="tel"
             name="number"
             pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
@@ -49,10 +56,10 @@ export const ContactEditor = ({ id, name, number, onClose }) => {
             required
             placeholder={number}
           />
-        </label>
-        <button type="submit">Save changes</button>
+        </Label>
+        <UpdateContactBtn type="submit">Save changes</UpdateContactBtn>
       </form>
-    </div>
+    </>
   );
 };
 

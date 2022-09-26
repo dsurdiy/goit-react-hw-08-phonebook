@@ -15,7 +15,7 @@ const HomePage = () => {
       {isLogin ? (
         <StyledLink to="/contacts">My Contacts</StyledLink>
       ) : (
-        <StyledLink to="/login">Get Started</StyledLink>
+        <StyledLink to="/register">Get Started</StyledLink>
       )}
     </Container>
   );

@@ -5,10 +5,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import contactsOperations from 'redux/contacts/contacts-operations';
 import contactsSelectors from 'redux/contacts/contacts-selectors';
 import { changeFilter } from 'redux/filterSlice';
-
 import { ContactForm } from 'components/ContactForm/ContactForm';
 import { ContactList } from 'components/ContactList/ContactList';
 import { Filter } from 'components/Filter/Filter';
+import { Wrapper, PageTitle, ContactsContainer } from './ContactsPage.styled';
 
 const ContactsPage = () => {
   const dispatch = useDispatch();
@@ -54,25 +54,16 @@ const ContactsPage = () => {
 
   return (
     <>
-      <ContactForm onSubmit={formSubmitHandler} />
+      <PageTitle>My Contacts</PageTitle>
+      <Wrapper>
+        <ContactForm onSubmit={formSubmitHandler} />
 
-      <h2>Contacts</h2>
-
-      <Filter value={filter} onChange={handleFilterChange} />
-
-      <ContactList contacts={getFilteredContacts()} />
-
-      {/* {isLoading ? (
-        <FallingLines
-          color="#ff7043"
-          width="150"
-          visible={true}
-          ariaLabel="falling-lines-loading"
-        />
-      ) : (
-        <ContactList contacts={getFilteredContacts()} />
-      )} */}
-      {!isContacts && <b>There are no contacts...</b>}
+        <ContactsContainer>
+          <Filter value={filter} onChange={handleFilterChange} />
+          <ContactList contacts={getFilteredContacts()} />
+          {!isContacts && <b>There are no contacts...</b>}
+        </ContactsContainer>
+      </Wrapper>
     </>
   );
 };

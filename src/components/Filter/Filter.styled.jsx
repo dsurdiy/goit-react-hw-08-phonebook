@@ -1,27 +1,18 @@
 import styled from 'styled-components';
 
-export const FilterLabel = styled.label`
-  display: block;
-  width: 90%;
-  margin: 0 auto;
-  margin-bottom: 30px;
-  text-align: center;
-  font-size: 20px;
-`;
-
 export const FilterInput = styled.input`
   display: block;
-  width: 70%;
-  margin: 0 auto;
-  margin-top: 10px;
+  width: 320px;
+  height: 30px;
+  margin: 40px auto 20px;
   padding: 10px;
-  height: 40px;
   border: none;
-  outline: 1px solid black;
   border-radius: 10px;
   font-size: 18px;
+  transition: all 300ms linear;
 
   :focus {
-    outline: 2px solid tomato;
+    outline: 1px solid #92a9ca;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
 `;
